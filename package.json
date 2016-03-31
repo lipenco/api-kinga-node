@@ -34,5 +34,8 @@
     "type": "",
     "url": ""
   },
+  "engines": {
+    "node": "0.12.7"
+  },
   "description": "api-kinga-node"
 }
