@@ -4,21 +4,9 @@
   "base": "User",
   "idInjection": true,
   "options": {
-    "validateUpsert": true,
-    "mysql": {
-      "table": "_user"
-    }
+    "validateUpsert": true
   },
-  "properties": {
-    "email": {
-      "type": "string",
-      "required": true
-    },
-    "password": {
-      "type": "string",
-      "required": true
-    }
-  },
+  "properties": {},
   "validations": [],
   "relations": {
     "projects": {

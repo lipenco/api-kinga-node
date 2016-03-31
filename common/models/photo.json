@@ -9,6 +9,14 @@
   "properties": {
     "url": {
       "type": "string"
+    },
+    "isAvatar": {
+      "type": "boolean",
+      "default": false
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "default": false
     }
   },
   "validations": [],
