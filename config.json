@@ -1,0 +1,18 @@
+{
+  "units": [
+    "in",
+    "km",
+    "m",
+    "cm",
+    "mile",
+    "kg",
+    "tn"
+  ],
+  "gcloud": {
+    "provider": "google",
+    "keyFilename": "./identity.json",
+    "projectId": "kinga-1266",
+    "container": "kinga-1266",
+    "url": "https://storage.googleapis.com/poetic-airport-100014/"
+  }
+}
