@@ -10,6 +10,7 @@
     "babel-plugin-add-module-exports": "^0.1.2",
     "babel-preset-es2015": "^6.5.0",
     "babel-register": "^6.5.1",
+    "cloudinary": "1.3.0",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "loopback": "^2.22.0",
