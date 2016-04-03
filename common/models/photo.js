@@ -12,8 +12,11 @@ module.exports = function(Photo) {
     let data = ctx.instance || ctx.data;
 
     return cloudinary.v2.uploader.upload(
-      "https://kinga-api.herokuapp.com/" + data.tempurl, function(result) {
-      data.url = result.url;
+      "https://kinga-api.herokuapp.com/" + data.tempurl, function(result, err) {
+        console.log(result, err)
+        if (result) {
+          data.url = result.url;
+        }
       next();
     });
 
