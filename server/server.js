@@ -14,6 +14,7 @@ app.start = function() {
 
   var container = ds.createModel('container');
   app.model(container);
+  app.use(loopback.static(path.resolve(__dirname, '../server/storage/storage')));
 
   // start the web server
   return app.listen(function() {

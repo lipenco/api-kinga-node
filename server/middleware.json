@@ -29,7 +29,18 @@
       ]
     }
   },
-  "files": {},
+  "files": {
+    "loopback#static": [{
+        "name": "client",
+        "paths": ["/client"],
+        "params": "$!../client"
+    },
+    {
+        "name": "container",
+        "paths": ["/server/container/container"],
+        "params": "$!../container/container"
+}]
+  },
   "final": {
     "loopback#urlNotFound": {}
   },
