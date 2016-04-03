@@ -11,9 +11,9 @@ module.exports = function(Photo) {
   Photo.observe("before save", (ctx, next) => {
     let data = ctx.instance || ctx.data;
 
-    return cloudinary.v2.uploader.upload(
-      "https://kinga-api.herokuapp.com/" + data.tempurl, function(result, err) {
-        console.log(result, err)
+    return cloudinary.uploader.upload(
+      "https://kinga-api.herokuapp.com/" + data.tempurl, function(result) {
+        console.log(result)
         if (result) {
           data.url = result.url;
         }
