@@ -9,16 +9,17 @@ cloudinary.config({
 module.exports = function(Photo) {
 
   Photo.observe("before save", (ctx, next) => {
+    console.log(ctx.instance)
     let data = ctx.instance || ctx.data;
 
     return cloudinary.uploader.upload(
       "https://kinga-api.herokuapp.com/" + data.tempurl, function(result) {
-        console.log(result)
         if (result) {
           data.url = result.url;
-        }
-      next();
-    });
+          data.public_id = result.public_id;
+          next();
+        }    
+    }, {eager_async: true});
 
   });
 
