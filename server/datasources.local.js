@@ -7,5 +7,11 @@ module.exports = {
     defaultForType: "mongodb",
     connector: "loopback-connector-mongodb",
     url: mongoUri
+  },
+  storage: {
+    name: "storage",
+    connector: "loopback-component-storage",
+    provider: "filesystem",
+    root: "storage"
   }
 };

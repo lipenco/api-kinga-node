@@ -2,5 +2,11 @@
   "db": {
     "name": "db",
     "connector": "loopback-connector-mongodb"
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "storage"
   }
 }

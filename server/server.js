@@ -1,12 +1,23 @@
 require("babel-register");
 var loopback = require('loopback');
 var boot = require('loopback-boot');
+var path = require("path");
 
 var app = module.exports = loopback();
 
 app.start = function() {
+  var ds = loopback.createDataSource({
+      connector: require('loopback-component-storage'),
+      provider: 'filesystem',
+      root: path.join(__dirname, 'storage')
+  });
+
+  var container = ds.createModel('container');
+  app.model(container);
+
   // start the web server
   return app.listen(function() {
+
     app.emit('started');
     var baseUrl = app.get('url').replace(/\/$/, '');
     console.log('Web server listening at: %s', baseUrl);

@@ -10,10 +10,13 @@ module.exports = function(Photo) {
 
   Photo.observe("before save", (ctx, next) => {
     let data = ctx.instance || ctx.data;
-    cloudinary.uploader.upload(ctx.instance.data, function(result) {
+
+    return cloudinary.v2.uploader.upload(
+      "https://kinga-api.herokuapp.com/server/storage/storage/" + data.tempurl, function(result) {
       data.url = result.url;
       next();
     });
+
   });
 
 };
