@@ -8,7 +8,7 @@ cloudinary.config({
 
 module.exports = function(Photo) {
 
-  Photo.observe("before save", (ctx, next) => {
+  Photo.observe("before create", (ctx, next) => {
     console.log(ctx.instance)
     let data = ctx.instance || ctx.data;
 
@@ -18,8 +18,10 @@ module.exports = function(Photo) {
           data.url = result.url;
           data.public_id = result.public_id;
           next();
-        }    
-    }, {eager_async: true});
+        } else {
+          next();
+        }
+    });
 
   });
 
