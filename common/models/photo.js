@@ -10,7 +10,6 @@ cloudinary.config({
 module.exports = function(Photo) {
   Photo.beforeCreate = function(next, modelInstance) {
     let data = modelInstance;
-    console.log("here", modelInstance)
     return cloudinary.uploader.upload(
       "https://kinga-api.herokuapp.com/" + data.tempurl, function(result) {
         if (result) {
