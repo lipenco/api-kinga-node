@@ -15,6 +15,10 @@
     },
     "title": {
       "type": "string"
+    },
+    "isPublished": {
+      "type": "boolean",
+      "default": false
     }
   },
   "validations": [],
