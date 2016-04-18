@@ -5,6 +5,6 @@ module.exports = function(Project) {
 
     Photo.destroyAll({projectId : ctx.id})
     next();
-  };
+  });
 
 };
