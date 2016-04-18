@@ -1,5 +1,5 @@
 var loopback = require('loopback');
-var Photo = loopback.getModel("Photo")
+var Photo = loopback.getModel("photo")
 
 module.exports = function(Project) {
   Project.observe('before delete', function (ctx, next) {
